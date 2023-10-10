@@ -1,0 +1,7 @@
+.definitieDesc {
+    padding-left: 3em;
+}
+
+.definitieDesc, .definitieTitle {
+    margin: 0;
+}
