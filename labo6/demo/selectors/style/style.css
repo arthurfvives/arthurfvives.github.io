@@ -1,0 +1,21 @@
+body {
+    background-color: yellow;
+}
+
+p:first-letter {
+    color: red;
+    font-size: 2em;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+li > a:hover {
+    text-decoration: underline;
+}
+
+li:nth-child(2n+1) { /* alle oneven elementen */
+    color: blue;
+    font-weight: bold;
+}
