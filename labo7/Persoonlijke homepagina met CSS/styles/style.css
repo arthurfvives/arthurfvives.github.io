@@ -1,0 +1,91 @@
+body {
+    font-family: sans-serif;
+    margin: 0 0 20px 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+header {
+    background-color: #7a7a7a;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+nav {
+    background-color: #5d5a5a;
+    color: #fff;
+    padding: 0.7em 0 0.35em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    vertical-align: middle;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto 0;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #009688;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+#personal-info figure, #personal-info address {
+    margin: 0;
+    text-align: center;
+}
+
+#interesses a {
+    margin: 16px 40px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
