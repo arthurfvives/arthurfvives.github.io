@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    margin: 10px;
+    border: 1px solid black;
+    font-size: 1.25em;
+    padding: 10px;
+    float: right;
+}
+
+article img {
+    float: left;
+    margin-right: 10px;
+}
+
+article:nth-child(even) img {
+    float: right;
+    margin-left: 10px;
+}
+
+h2 {
+    margin: 0;
+}
