@@ -1,0 +1,24 @@
+/* .light-gray {
+  background-color: lightgrey;
+}
+
+.dark-gray {
+  background-color: grey;
+} */
+
+.col-xl-3:nth-child(odd) {
+  background-color: lightgrey;
+  border: 10px solid white;
+}
+.col-xl-3:nth-child(even) {
+  background-color: grey;
+  border: 10px solid white;
+}
+
+.content {
+  height: 100px;
+}
+
+body {
+  margin-right: 30px;
+}

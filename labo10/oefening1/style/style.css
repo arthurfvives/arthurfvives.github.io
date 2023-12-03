@@ -1,0 +1,11 @@
+.light-gray {
+  background-color: lightgrey;
+}
+
+.dark-gray {
+  background-color: grey;
+}
+
+.content {
+  height: 100px;
+}
