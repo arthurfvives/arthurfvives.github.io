@@ -1,0 +1,27 @@
+:root {
+    --nav: blue;
+    --article: orange;
+    --widthNav: 20%;
+}
+
+body {
+    display: flex;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+nav {
+    flex-basis: var(--widthNav);
+    background-color: var(--nav);
+}
+
+article {
+    flex-basis: calc(100% - var(--widthNav));
+    background-color: var(--article);
+}
+
+article, nav {
+    padding: 15px;
+    box-sizing: border-box;
+    color: white;
+}
