@@ -6,8 +6,9 @@ body {
     display: grid;
     grid-template-areas: 
     'header header header header header'
-    'navigation navigation main aside aside'
+    '. navigation main aside .'
     'footer footer footer footer footer';
+    grid-template-columns: 5% 10% 70% 10% 5%;
 }
 
 .caption, .gridHeader, .gridNav, .gridMain, .gridAside, .gridFooter {
@@ -28,7 +29,6 @@ body {
 .gridNav {
     background-color: #c6c0ff;
     grid-area: navigation;
-    margin-left: 20px;
 }
 
 .gridMain {
@@ -39,7 +39,6 @@ body {
 .gridAside {
     background-color: #d4ffd1;
     grid-area: aside;
-    margin-right: 20px;
 }
 
 .gridFooter {
@@ -55,9 +54,6 @@ body {
         'main'
         'aside'
         'footer';
-    }
-
-    .gridAside, .gridNav {
-        margin: unset;
+        grid-template-columns: 100%;
     }
 }
