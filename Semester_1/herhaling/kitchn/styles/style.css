@@ -107,11 +107,6 @@ nav a:hover {
   padding-top: 15px;
 }
 
-#recipes img {
-  display: block;
-  margin: 0 0 15px 20px;
-}
-
 .redSub {
   text-transform: uppercase;
   font-size: 1.2em;

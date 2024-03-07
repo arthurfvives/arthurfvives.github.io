@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    article {
+      grid-column: span 2; /* Span both columns */
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block; /* Remove default image spacing */
+      margin: 0 auto; /* Center the image */
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <p>Your paragraph goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <img src="img" alt="Your Image Description">
+  </article>
+</body>
+</html>
