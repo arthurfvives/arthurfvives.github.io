@@ -1,0 +1,7 @@
+.listItemsStyleNone {
+    list-style-type: none;
+}
+
+.listItemsStyleDisc {
+    list-style-type: disc;
+}
