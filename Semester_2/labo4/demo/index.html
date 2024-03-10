@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Demo</title>
+</head>
+<body>
+<form action="student/index" method="post">
+    <label for="name">Name: </label>
+    <input type="text" name="Naam" id="name" required placeholder="Vul hier je naam in">
+    <label for="password">Password: </label>
+    <input type="password" name="password" id="password">
+    <label for="phone">GSM: </label>
+    <input type="tel" name="phone" id="phone" pattern="04[0-9]{2}\/[0-9]{6}" placeholder="bv. 0499/123456">
+    <label for="url">Url: </label>
+    <input type="url" name="url" id="url">
+    <input type="submit" value="send">
+    <!--
+     vierkante haakjes: alle getallen tussen O en 9
+     akkolade: frequentie: je mag dus 2 keer een getal tussen 0 en 9 gebruiken [0-9]{2}
+     \/ slash is een speciaal teken dus er moet een backslash voor. (in obsidian is dit ook zo)
+     [1-9]{1}[0-9]{3} voor postcode
+     -->
+</form>
+
+<script type="text/javascript" charset="utf-8" src="scripts/code.js"></script>
+</body>
+</html>
