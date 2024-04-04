@@ -44,8 +44,8 @@ const withBullets = () => {
 }
 
 const changeContent = () => {
-    document.getElementById("textContent").textContent = "<a href='https://www.vives.be'>VIVES</a>";
-    document.getElementById("innerHTML").innerHTML = "<a href='https://www.vives.be'>VIVES</a>";
+    document.getElementById("textContent").textContent = "<a href='https://demo sprites animation.vives.be'>VIVES</a>";
+    document.getElementById("innerHTML").innerHTML = "<a href='https://demo sprites animation.vives.be'>VIVES</a>";
 }
 
 window.addEventListener("load", setup);
