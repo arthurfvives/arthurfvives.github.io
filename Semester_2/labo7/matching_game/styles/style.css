@@ -17,3 +17,11 @@
 .card img {
     cursor: pointer;
 }
+
+.correct {
+    border: 20px solid green;
+}
+
+.incorrect {
+    border: 20px solid red;
+}

@@ -3,7 +3,11 @@ let global = {
     AANTAL_VERTICAAL: 3,
     AANTAL_KAARTEN: 6,
     KAARTEN: ["img/kaart1.png", "img/kaart2.jpg", "img/kaart3.png", "img/kaart4.jpg", "img/kaart5.png", "img/kaart6.png"],
-    ACHTERKANT: "img/achterkant.jpg"
+    ACHTERKANT: "img/achterkant.jpg",
+    ISBEZIG: false,
+    OMGEDRAAIDE_KAARTEN: [],
+    timeoutId: 0,
+    MATCHING_CARDS: 0
 };
 
 const setup = () => {
@@ -34,12 +38,45 @@ const bouwElementen = () => {
 
 const getRandom = () => {
     return Math.floor(Math.random() * 6);
-}
+};
 
 const turnCard = (e) => {
-    let clickedCard = e.target;
-    clickedCard.src = global.KAARTEN[getRandom()];
-}
+    if (!global.ISBEZIG || global.OMGEDRAAIDE_KAARTEN.length === 0) {
+        let card = e.target;
+        card.src = global.KAARTEN[getRandom()];
+        global.OMGEDRAAIDE_KAARTEN.push(card); // geselecteerde kaart in de array steken
+    }
+    if (global.OMGEDRAAIDE_KAARTEN.length === 2) {
+        global.ISBEZIG = true; // 2 kaarten geselecteerd, nu nog controleren.
+        controleer();
+    }
+};
+const controleer = () => {
+    let card1 = global.OMGEDRAAIDE_KAARTEN[0];
+    let card2 = global.OMGEDRAAIDE_KAARTEN[1];
+    if (card1.src === card2.src) {
+        global.MATCHING_CARDS += 2;
+        if (global.MATCHING_CARDS === (global.AANTAL_KAARTEN * 2)) {
+            setTimeout(() => {
+                alert("Je hebt alle kaarten gevonden. Gefeliciteerd!")
+            }, 500)
+        }
+        card1.classList.add("correct");
+        card2.classList.add("correct");
+        //removeCardInterval();
+        setTimeout(() => {
+            card1.parentElement.style.display = "none";
+            card2.parentElement.style.display = "none";
+        }, 1000)
+    } else {
+        setTimeout(() => {
+            card1.src = global.ACHTERKANT;
+            card2.src = global.ACHTERKANT;
+        }, 1000)
+    }
+    global.OMGEDRAAIDE_KAARTEN = [];
+    global.ISBEZIG = false;
+};
 
 
 window.addEventListener("load", setup);
