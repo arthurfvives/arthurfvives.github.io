@@ -1,6 +1,6 @@
 const global = {
     prefixes: ["/g", "/y", "/t", "/i"],
-    keywords: ["webdesign", "arctic monkeys", "COVID19", "viveshwbkortrijk", "mondmasker maken", "bootstrap", "responsive design"],
+    //keywords: ["webdesign", "arctic monkeys", "COVID19", "viveshwbkortrijk", "mondmasker maken", "bootstrap", "responsive design"],
     urlPrefix: "https://www.",
     google: "google.com/search?q=",
     youtube: "youtube.com/results?search_query=",
@@ -15,6 +15,7 @@ const global = {
 const setup = () => {
     document.getElementById("go").addEventListener("click", checkInput);
     loadCommands();
+    document.getElementById("clearStorage").addEventListener("click", clearStorage);
 };
 
 const checkInput = () => {
@@ -22,7 +23,7 @@ const checkInput = () => {
     let prefix = input.substring(0, 2);
     let command = input.substring(3);
 
-    if (global.prefixes.includes(prefix)) {
+    /*if (global.prefixes.includes(prefix)) {
         if (global.keywords.includes(command)) {
             search(prefix, command);
         } else {
@@ -30,6 +31,11 @@ const checkInput = () => {
         }
     } else {
         alert("Unknown command prefix");
+    }*/
+    if (!global.prefixes.includes(prefix)) {
+        alert("Unknown command prefix");
+    } else {
+        search(prefix, command);
     }
 };
 
@@ -80,17 +86,25 @@ const saveCommand = (website, command, url) => {
     localStorage.setItem("VIVES.be.commands", JSON.stringify(commands));
 };
 
+const createElementWithClassName = (element, className) => {
+    let e = document.createElement(element);
+    e.setAttribute("class", className);
+    return e;
+}
+
 
 const createCard = (website, command, url) => {
-    let history = document.querySelector(".history").firstElementChild;
+    let history = document.querySelector(".history").querySelector(".row");
     let card = document.createElement("div");
     let body = document.createElement("div");
+    let col4 = document.createElement("div");
     let h5 = document.createElement("h5");
     let p = document.createElement("p");
-    let a = document.createElement("a");
+    let a= document.createElement("a");
 
     card.classList.add("card");
     card.classList.add("text-light");
+    col4.classList.add("col-4");
     body.classList.add("card-body");
     h5.classList.add("card-title");
     h5.innerText = website;
@@ -102,7 +116,8 @@ const createCard = (website, command, url) => {
     a.innerText = "Go!";
     a.target = "_blank";
 
-    history.appendChild(card);
+    history.appendChild(col4);
+    col4.appendChild(card)
     card.appendChild(body);
     body.appendChild(h5);
     body.appendChild(p);
@@ -124,5 +139,12 @@ const changeColors = () => {
         }
     }
 };
+
+const clearStorage = () => {
+    localStorage.clear();
+    let row = document.querySelector(".row");
+    row.innerHTML = "";
+
+}
 
 window.addEventListener("load", setup);

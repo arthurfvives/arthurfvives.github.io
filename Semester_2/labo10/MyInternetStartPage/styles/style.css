@@ -13,3 +13,15 @@
 .instagram {
     background-color: #c163ee;
 }
+
+#clearStorage {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 10px;
+}
+
+#clearStorage:hover {
+    background-color: grey;
+    color: white;
+}

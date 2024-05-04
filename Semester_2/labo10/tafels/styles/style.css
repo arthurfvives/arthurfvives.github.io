@@ -1,0 +1,31 @@
+body {
+    font-family: sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.border {
+    border: 1px solid black;
+    margin: 4px;
+}
+
+#container .row, .border div{
+    width: 300px;
+    padding: 10px;
+}
+
+.grey {
+    background-color: lightgray;
+}
+
+p {
+    margin: 0;
+}
+
+.header {
+    background-color: #12125d;
+    color: white;
+}
